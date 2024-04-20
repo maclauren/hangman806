@@ -1,25 +1,33 @@
-#milestone 3
-#task 1
+# Task 2
 
-# while loop set to true
-while True:
-    # ask user to guess letter and assign to guess var
-    guess = input("Guess a letter: ")
-    # check guess is single alphabetical character using isalpha
-    if len(guess) == 1 and guess.isalpha():
-        # if guess passes break loop
-        break
-    # if guess does not pass print message
+# Check if guess is in word
+def check_guess(guess, secret_word):
+    guess = guess.lower()
+    if guess in secret_word:
+        # Print message
+        print(f"Good guess! '{guess}' is in the word.")
     else:
-        print("Invalid letter. Please, enter a single alphabetical character.")
+        # Print message
+        print(f"Sorry, '{guess}' is not in the word. Try again.")
 
-# task 2
+# Task 1
 
-# check if guess is in word
-if guess in secret word:
-#print message
-    print("Good guess! '{guess}' is in the word.")
-# else print message
-else:
-    print("Sorry, '{guess}' is not in the word. Try again.")
+# While loop set to True
+def ask_for_input(secret_word):
+    while True:
+        # Ask user to guess letter and assign to guess var
+        guess = input("Guess a letter: ")
+        # Check if guess is a single alphabetical character using isalpha
+        if len(guess) == 1 and guess.isalpha():
+            # If guess passes, break loop
+            break
+        # If guess does not pass, print message
+        else:
+            print("Invalid letter. Please, enter a single alphabetical character.")
 
+    # Call the check_guess function to check if the guess is in the word
+    check_guess(guess, secret_word)
+
+secret_word = ""
+
+ask_for_input(secret_word)
