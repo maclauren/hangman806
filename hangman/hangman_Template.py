@@ -17,6 +17,8 @@ class Hangman:
         List of words to be used in the game
     num_lives: int
         Number of lives the player has
+
+        
     
     Attributes:
     ----------
@@ -40,6 +42,32 @@ class Hangman:
     ask_letter()
         Asks the user for a letter.
     '''
+# Create and print word list
+
+word_list = ['Strawberry', 'Melon', 'Blueberry', 'Mango', 'Kiwi']
+print(word_list)
+
+# Choose a random word and print
+
+word = random.choice(word_list)
+
+print(word)
+
+# Guess a single letter and print guess
+
+guess = input("Enter a single letter: ")
+
+print("You entered:", guess)
+
+# Validate the guess is a single letter input
+
+if len(guess) == 1 and guess.isalpha():
+    print("Good guess!")
+else:
+    print("Oops! That is not a valid input.")
+
+
+
     def __init__(self, word_list, num_lives=5):
         # TODO 2: Initialize the attributes as indicated in the docstring
         # TODO 2: Print two message upon initialization:
